@@ -18,6 +18,10 @@
 			{
 				"command": "leave-wildly-timer.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "leave-wildly-timer.test",
+				"title": "Test Dayo"
 			}
 		]
 	},

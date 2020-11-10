@@ -2,13 +2,26 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
+
 	console.log('Congratulations, your extension "leave-wildly-timer" is now active!');
+
+	let statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
+	statusBar.text = "test dayo";
+	statusBar.tooltip = "tool tip";
+
+	const yNoCommand = 'leave-wildly-timer.test';
+	context.subscriptions.push(vscode.commands.registerCommand(yNoCommand, () => {
+		vscode.window.showInformationMessage('koreha ixtutai nannnann?');
+		statusBar.text = "comando-";
+	}));
+	statusBar.command = yNoCommand;
+	statusBar.show();
+	context.subscriptions.push(statusBar);
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -21,7 +34,10 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+
+
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
