@@ -10,18 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:leave-wildly-timer.helloWorld"
+		"onCommand:leave-wildly-timer.time"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "leave-wildly-timer.helloWorld",
-				"title": "Hello World"
-			},
-			{
-				"command": "leave-wildly-timer.test",
-				"title": "Test Dayo"
+				"command": "leave-wildly-timer.time",
+				"title": "Timer enabled"
 			}
 		]
 	},
