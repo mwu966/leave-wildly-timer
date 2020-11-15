@@ -24,9 +24,15 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+	let timerFlag: Boolean = true;
 	setInterval(() => {
 		let date2 = new Date();
 		statusBar.text = date2.getHours() + ":" + date2.getMinutes() + " " + date2.getSeconds();
+		if (date2.getHours() === 15 && date2.getMinutes() === 45 && timerFlag) {
+			vscode.commands.executeCommand('leave-wildly-timer.time');
+			timerFlag = false;
+		}
 	}, 1000);
 
 
