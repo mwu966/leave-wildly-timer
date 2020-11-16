@@ -10,14 +10,24 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:leave-wildly-timer.time"
+		"onCommand:leave-wildly-timer.set",
+		"onCommand:leave-wildly-timer.enabled",
+		"onCommand:leave-wildly-timer.notify"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "leave-wildly-timer.time",
+				"command": "leave-wildly-timer.set",
+				"title": "Timer setting"
+			},
+			{
+				"command": "leave-wildly-timer.enabled",
 				"title": "Timer enabled"
+			},
+			{
+				"command": "leave-wildly-timer.notify",
+				"title": "Timer show"
 			}
 		]
 	},
@@ -47,5 +57,8 @@
 		"ts-loader": "^8.0.3",
 		"webpack": "^4.44.1",
 		"webpack-cli": "^3.3.12"
+	},
+	"dependencies": {
+		"node-wav-player": "^0.2.0"
 	}
 }
